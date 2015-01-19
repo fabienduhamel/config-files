@@ -18,12 +18,11 @@ function show_help {
 	echo ""
 	echo "Usage:"
 	echo "1. Create an environment directory here with -c <environment>"
-	echo "2. Add your file or directory in the environment directory yourself and use -a option to track it (relative path in /home/$USER)"
+	echo "2. Add your file or directory in the environment using -a option to track it (relative path in /home/$USER)"
 	echo "3. Use -i to symlink it in your system (it backups your current files automatically in your environment directory)"
 	echo
 	echo "Example:"
 	echo "./config-files.sh -c linux"
-	echo "cp ~/.bashrc linux"
 	echo "./config-files.sh -e linux -a .bashrc"
 	echo "./config-files.sh -e linux -i"
 }
@@ -33,7 +32,7 @@ function create {
 	touch $ENVIRONMENT/$INSTALL_LIST_FILE
 }
 
-function check_existence_of_element {
+function check_existence_of_element_in_list {
 	element_to_add=$1
 	elements=`cat $INSTALL_LIST_FILE`
 	for element in $elements; do
@@ -47,19 +46,25 @@ function check_existence_of_element {
 
 function add {
 	element_to_add=$1
-	existing_element=$(check_existence_of_element $element_to_add)
+	existing_element=$(check_existence_of_element_in_list $element_to_add)
 	if [[ "$existing_element" = 1 ]]; then
 		echo "$element_to_add already added. Exiting"
 		return
 	else
-		echo "$element_to_add doesn't already exist. Adding"
+		echo "$element_to_add doesn't exist. Adding"
+		if [ -e ./$element_to_add ]; then
+			echo "$element_to_add already exists for this environment ($ENVIRONMENT). Exiting"
+			exit 1
+		fi
+		echo "cp $HOME/$element_to_add ."
+		cp $HOME/$element_to_add .
 		echo -e "$element_to_add" >> $INSTALL_LIST_FILE
 	fi
 }
 
 function remove {
 	element_to_remove=$1
-	existing_element=$(check_existence_of_element $element_to_remove)
+	existing_element=$(check_existence_of_element_in_list $element_to_remove)
 	if [[ "$existing_element" = 1 ]]; then
 		echo "$element_to_remove exists. Removing"
 		sed -i /^$element_to_remove$/d $INSTALL_LIST_FILE
