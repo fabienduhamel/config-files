@@ -56,7 +56,7 @@ function add {
 			echo "$element_to_add already exists for this environment ($ENVIRONMENT). Exiting"
 			exit 1
 		fi
-		echo "cp $HOME/$element_to_add ."
+		echo "cp -r $HOME/$element_to_add ."
 		cp $HOME/$element_to_add .
 		echo -e "$element_to_add" >> $INSTALL_LIST_FILE
 	fi
