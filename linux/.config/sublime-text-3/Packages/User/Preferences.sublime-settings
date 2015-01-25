@@ -7,6 +7,10 @@
 	[
 		"Vintage"
 	],
+	"rulers":
+	[
+		80
+	],
 	"save_on_focus_lost": true,
 	"translate_tabs_to_spaces": true
 }
