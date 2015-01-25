@@ -34,8 +34,7 @@ function create {
 
 function check_existence_of_element_in_list {
 	element_to_add=$1
-	elements=`cat $INSTALL_LIST_FILE`
-	for element in $elements; do
+	cat $INSTALL_LIST_FILE | while read -r element; do
 		if [ $element = $element_to_add ]; then
 			echo 1
 			return
@@ -77,9 +76,8 @@ function remove {
 function install_environment {
 	echo "Install $ENVIRONMENT"
 
-	elements=`cat $INSTALL_LIST_FILE`
-	for element in $elements; do
-		install $element
+	cat $INSTALL_LIST_FILE | while read -r element; do
+		install "$element"
 	done
 }
 
@@ -97,9 +95,9 @@ function create_backup_dir {
 
 function backup {
 	element=$1
-	echo "cp -r --parents $HOME/$element $BACKUP_DIR"
-	cp -r --parents $HOME/$element $BACKUP_DIR
-	if [ ! -e $BACKUP_DIR/$HOME/$element ]; then
+	echo "cp -r --parents \"$HOME/$element\" $BACKUP_DIR"
+	cp -r --parents "$HOME/$element" $BACKUP_DIR
+	if [ ! -e "$BACKUP_DIR/$HOME/$element" ]; then
 		echo "$element cannot be backuped. Exiting."
 		exit 1
 	fi
@@ -107,29 +105,29 @@ function backup {
 
 function install {
 	element=$1
-	if [ -L $HOME/$element ]; then
+	if [ -L "$HOME/$element" ]; then
 		echo "$HOME/$element is already a link. Skipping"
 		return
 	fi
-	if [ -e $HOME/$element ]; then
+	if [ -e "$HOME/$element" ]; then
 		create_backup_dir
 		echo "$HOME/$element exists. Backuping to $BACKUP_DIR/$element"
-		backup $element
+		backup "$element"
 		echo "rm -r $HOME/$element"
-		rm -r $HOME/$element
+		rm -r "$HOME/$element"
 	else
 		echo "$element doesn't exist in system. No backup"
 	fi
-	link $element
+	link "$element"
 }
 
 function link {
 	element=$1
-	target=$PWD/$element
-	link_name=$element
+	target="$PWD/$element"
+	link_name="$element"
 	echo "Creating link for $element"
-	echo "ln -s $target $HOME/$link_name"
-	ln -s $target $HOME/$link_name
+	echo "ln -s \"$target\" \"$HOME/$link_name\""
+	ln -s "$target" "$HOME/$link_name"
 }
 
 while getopts ":c:?e:?a:?i?r:?" opt; do
