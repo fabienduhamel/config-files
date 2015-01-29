@@ -79,6 +79,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # History search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
