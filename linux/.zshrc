@@ -79,6 +79,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias lal='ls -lAh'
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
