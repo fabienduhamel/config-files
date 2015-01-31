@@ -24,8 +24,8 @@ function show_help {
     echo
     echo "Example:"
     echo "./config-files.sh -c linux"
-    echo "./config-files.sh -e linux -a \"~/.config/sublime-text-3/Installed\ Packages/\""
     echo "./config-files.sh -e linux -a ~/.bashrc"
+    echo "./config-files.sh -e linux -a \"~/.config/sublime-text-3/Installed\ Packages/\""
     echo "./config-files.sh -e linux -i"
 }
 
