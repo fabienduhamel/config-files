@@ -23,4 +23,3 @@ PS1='\
 \[\033[00m\]\$\
 '
 
-complete -cf sudo nohup killall man
