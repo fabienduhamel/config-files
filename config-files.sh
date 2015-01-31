@@ -5,6 +5,7 @@ UPDATE=0
 ADD=0
 REMOVE=0
 INSTALL=0
+LIST=0
 BACKUP_DIR="./backup"
 INSTALL_LIST_FILE="to_install"
 TMP_INSTALL_LIST_FILE="to_install_tmp"
@@ -15,6 +16,7 @@ function show_help {
     echo "-a : track a file"
     echo "-r : untrack a file"
     echo "-i : install an environment"
+    echo "-l : list files to install"
     echo "Only -a or -i or -r argument"
     echo ""
     echo "Usage:"
@@ -152,7 +154,11 @@ function link {
     eval $link_cmd
 }
 
-while getopts ":c:?e:?a:?i?r:?" opt; do
+function list {
+    cat $INSTALL_LIST_FILE
+}
+
+while getopts ":c:?e:?a:?i?l?r:?" opt; do
     case $opt in
         e)
             [ $CREATE = 1 ] &&
@@ -165,7 +171,7 @@ while getopts ":c:?e:?a:?i?r:?" opt; do
             ENVIRONMENT=$OPTARG
             ;;
         c)
-            [ $UPDATE = 1 ] || [ $ADD = 1 ] || [ $REMOVE = 1 ] || [ $INSTALL = 1 ] &&
+            [ $UPDATE = 1 ] || [ $ADD = 1 ] || [ $REMOVE = 1 ] || [ $INSTALL = 1 ] || [ $LIST = 1 ] &&
             {
                 show_help
 
@@ -175,7 +181,7 @@ while getopts ":c:?e:?a:?i?r:?" opt; do
             ENVIRONMENT=$OPTARG
             ;;
         a)
-            [ $REMOVE = 1 ] || [ $INSTALL = 1 ] || [ $CREATE = 1 ] || [ $UPDATE = 0 ] &&
+            [ $REMOVE = 1 ] || [ $INSTALL = 1 ] || [ $CREATE = 1 ] || [ $LIST = 1 ] || [ $UPDATE = 0 ] &&
             {
                 show_help
 
@@ -185,7 +191,7 @@ while getopts ":c:?e:?a:?i?r:?" opt; do
             ARG=$OPTARG
             ;;
         r)
-            [ $ADD = 1 ] || [ $INSTALL = 1 ] || [ $CREATE = 1 ] || [ $UPDATE = 0 ] &&
+            [ $ADD = 1 ] || [ $INSTALL = 1 ] || [ $CREATE = 1 ] || [ $LIST = 1 ] || [ $UPDATE = 0 ] &&
             {
                 show_help
 
@@ -195,13 +201,22 @@ while getopts ":c:?e:?a:?i?r:?" opt; do
             ARG=$OPTARG
             ;;
         i)
-            [ $REMOVE = 1 ] || [ $ADD = 1 ] || [ $CREATE = 1 ] || [ $UPDATE = 0 ] &&
+            [ $REMOVE = 1 ] || [ $ADD = 1 ] || [ $CREATE = 1 ] || [ $LIST = 1 ] || [ $UPDATE = 0 ] &&
             {
                 show_help
 
                 exit 1
             }
             INSTALL=1
+            ;;
+        l)
+            [ $REMOVE = 1 ] || [ $ADD = 1 ] || [ $CREATE = 1 ] || [ $INSTALL = 1 ] || [ $UPDATE = 0 ] &&
+            {
+                show_help
+
+                exit 1
+            }
+            LIST=1
             ;;
         h|\?)
             show_help
@@ -236,6 +251,8 @@ elif [ $REMOVE = 1 ]; then
     remove "$ARG"
 elif [ $INSTALL = 1 ]; then
     install_environment
+elif [ $LIST = 1 ]; then
+    list
 else
     show_help
 fi
