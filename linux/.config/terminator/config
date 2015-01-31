@@ -1,0 +1,18 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+[keybindings]
+[profiles]
+  [[default]]
+    scrollback_lines = 5000
+    background_image = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      profile = default
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 1250, 730
+[plugins]
