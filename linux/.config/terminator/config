@@ -1,5 +1,6 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
 [keybindings]
 [profiles]
   [[default]]
@@ -15,4 +16,28 @@
       type = Window
       parent = ""
       size = 1250, 730
+  [[monitoring]]
+    [[[child0]]]
+      position = 184:104
+      type = Window
+      order = 0
+      parent = ""
+      size = 1482, 849
+    [[[child1]]]
+      position = 578
+      type = VPaned
+      order = 0
+      parent = child0
+    [[[terminal3]]]
+      profile = default
+      command = watch free -m
+      type = Terminal
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = default
+      command = top
+      type = Terminal
+      order = 0
+      parent = child1
 [plugins]
