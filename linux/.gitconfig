@@ -1,15 +1,15 @@
 [user]
-	email = fduhamel@users.noreply.github.com
-	name = fduhamel
+    email = fduhamel@users.noreply.github.com
+    name = fduhamel
 
 [color]
-	ui = true
+    ui = true
 
 [alias]
-st = status
-ci = commit
-lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
-oops = commit --amend --no-edit
+    st = status
+    ci = commit
+    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+    oops = commit --amend --no-edit
 
 [core]
     editor=vim
@@ -21,4 +21,4 @@ oops = commit --amend --no-edit
     wordRegex = .
 
 [push]
-	default = simple
+    default = simple
