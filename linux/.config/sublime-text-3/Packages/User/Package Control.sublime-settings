@@ -13,11 +13,15 @@
 		"Alignment",
 		"BracketHighlighter",
 		"ColorPicker",
+		"Emmet",
 		"Markdown Preview",
 		"MoveTab",
 		"Package Control",
 		"PHP Companion",
 		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-json",
+		"Symfony2 Snippets",
 		"Twig",
 		"Wrap Plus"
 	]
