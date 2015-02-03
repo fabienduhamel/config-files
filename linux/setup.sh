@@ -10,3 +10,14 @@ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
 # default shell
 chsh -s /bin/zsh
+
+# php-pear
+sudo apt-get install php-pear
+
+# phpcs
+sudo pear install PHP_CodeSniffer
+
+# phpmd
+sudo pear channel-discover 'pear.phpmd.org'
+sudo pear channel-discover 'pear.pdepend.org'
+sudo pear install --alldeps 'phpmd/PHP_PMD'

@@ -22,6 +22,8 @@
 		"SublimeLinter",
 		"SublimeLinter-json",
 		"SublimeLinter-php",
+		"SublimeLinter-phpcs",
+		"SublimeLinter-phpmd",
 		"Symfony2 Snippets",
 		"Twig",
 		"Wrap Plus"
