@@ -21,3 +21,7 @@ sudo pear install PHP_CodeSniffer
 sudo pear channel-discover 'pear.phpmd.org'
 sudo pear channel-discover 'pear.pdepend.org'
 sudo pear install --alldeps 'phpmd/PHP_PMD'
+
+# # Symfony2 coding standards
+# cd /usr/share/php/PHP/CodeSniffer/Standards
+# sudo git clone https://github.com/escapestudios/Symfony2-coding-standard.git Symfony2
