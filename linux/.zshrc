@@ -80,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias lal='ls -lAh'
+alias dua='du -sh `ls -A | grep . | cut -d "'" "'" -f6-`'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

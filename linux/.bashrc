@@ -7,7 +7,7 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias lal='ls -al'
-alias dua='du `ls -A | grep . | cut -d "'" "'" -f6-`'
+alias dua='du -sh `ls -A | grep . | cut -d "'" "'" -f6-`'
 alias cd..='cd ..'
 alias clean-temp-files='rm *~ ; rm .*~'
 
