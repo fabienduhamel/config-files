@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this scripts runs the very essential commands for my new linux installation(s)
+# this scripts runs the very essential commands for a new linux installation
 
 # main packages
 sudo apt-get install terminator zsh vim
