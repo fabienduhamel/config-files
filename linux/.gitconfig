@@ -1,25 +1,25 @@
 [user]
 #    email = 
-#    name = 
+#    name  = 
 
 [color]
     ui = true
 
 [alias]
-    st = status
-    ci = commit
-    co = checkout
-    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+    st   = status
+    ci   = commit
+    co   = checkout
+    lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
     oops = commit --amend --no-edit
 
 [core]
-    editor=vim
+    editor     = vim
     whitespace = -trailing-space
 
 [diff]
     mnemonicPrefix = true
-    renames = true
-    wordRegex = .
+    renames        = true
+    wordRegex      = .
 
 [push]
     default = simple
