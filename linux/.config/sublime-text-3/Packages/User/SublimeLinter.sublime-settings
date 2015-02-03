@@ -21,6 +21,16 @@
 				[
 				],
 				"strict": true
+			},
+			"php":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
 			}
 		},
 		"mark_style": "outline",
