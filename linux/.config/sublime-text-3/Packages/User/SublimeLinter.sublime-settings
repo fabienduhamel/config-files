@@ -28,8 +28,7 @@
                 "@disable": false,
                 "args": [],
                 "excludes": [],
-//                "rulesets": "cleancode,codesize,controversial,design,naming,unusedcode"
-                "rulesets": "codesize,controversial,design,naming,unusedcode"
+                "rulesets": "cleancode,codesize,controversial,design,naming,unusedcode"
             }
         },
         "mark_style": "outline",
