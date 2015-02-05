@@ -22,22 +22,33 @@
       type = Window
       order = 0
       parent = ""
-      size = 1482, 849
+      size = 1482, 835
     [[[child1]]]
-      position = 578
+      position = 418
       type = VPaned
       order = 0
       parent = child0
-    [[[terminal3]]]
-      profile = default
-      command = watch free -m
-      type = Terminal
+    [[[child3]]]
+      position = 741
+      type = HPaned
       order = 1
       parent = child1
     [[[terminal2]]]
       profile = default
-      command = top
       type = Terminal
       order = 0
       parent = child1
+      command = top
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child3
+      command = watch sensors
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child3
+      command = watch free -m
 [plugins]
