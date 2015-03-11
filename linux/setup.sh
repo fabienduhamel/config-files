@@ -8,6 +8,11 @@ sudo apt-get install terminator zsh vim
 # oh my zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
+# zsh-git-prompt - See .zshrc for informations
+cd ~/.oh-my-zsh/plugins
+git clone https://github.com/olivierverdier/zsh-git-prompt
+cd
+
 # default shell
 chsh -s /bin/zsh
 

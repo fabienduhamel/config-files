@@ -93,3 +93,11 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
+
+# Better zsh git prompt with zsh-git-prompt 
+source $ZSH/plugins/zsh-git-prompt/zshrc.sh
+# Overriding branch color
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[red]%}"
+# Set zsh-git-prompt and time in $PROMPT
+PROMPT='${ret_status}%{$fg_bold[green]%}[%*] %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_super_status)%{$fg_bold[blue]%} %{$reset_color%}'
+
