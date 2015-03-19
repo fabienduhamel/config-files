@@ -96,8 +96,11 @@ bindkey "^[[B" down-line-or-beginning-search
 
 # Better zsh git prompt with zsh-git-prompt 
 source $ZSH/plugins/zsh-git-prompt/zshrc.sh
-# Overriding branch color
+# Overriding colors
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[red]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[magenta]%}%{✖%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}%{✚%G%}"
 # Set zsh-git-prompt and time in $PROMPT
 PROMPT='${ret_status}%{$fg_bold[green]%}[%*] %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_super_status)%{$fg_bold[blue]%} %{$reset_color%}'
 
