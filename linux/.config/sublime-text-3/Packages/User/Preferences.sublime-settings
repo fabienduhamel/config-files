@@ -13,5 +13,6 @@
 	],
 	"save_on_focus_lost": true,
 	"show_encoding": true,
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"ensure_newline_at_eof_on_save": true
 }
