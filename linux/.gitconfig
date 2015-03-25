@@ -17,7 +17,7 @@
     wdiff = diff --word-diff
     cdiff = diff --cached
     ndiff = diff --name-only
-
+    pushu = push -u origin HEAD
 
 [core]
     editor     = vim
