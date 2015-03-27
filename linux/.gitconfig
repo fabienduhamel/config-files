@@ -22,7 +22,7 @@
 [core]
     editor     = vim
     whitespace = -trailing-space
-	excludesfile = /home/fab/.gitignore_global
+    excludesfile = /home/fab/.gitignore_global
 
 [diff]
     mnemonicPrefix = true
