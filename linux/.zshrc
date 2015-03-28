@@ -86,6 +86,20 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Custom functions
+
+# Find and vim if one result.
+function vfind
+{
+    FILE_COUNT=`find "$@" | wc -l`
+    FILES=`find "$@"`
+    if [ $FILE_COUNT -eq 1 ]; then
+        vim $FILES
+    else
+        echo -e $FILES
+    fi
+}
+
 # History search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
