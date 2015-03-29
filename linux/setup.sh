@@ -30,3 +30,17 @@ sudo pear install --alldeps 'phpmd/PHP_PMD'
 # # Symfony2 coding standards
 # cd /usr/share/php/PHP/CodeSniffer/Standards
 # sudo git clone https://github.com/escapestudios/Symfony2-coding-standard.git Symfony2
+
+# Swapfile
+# dd if=/dev/zero of=/swapfile bs=1M count=8192
+# mkswap /swapfile
+# swapon /swapfile
+# 
+# /etc/fstab
+# /swapfile     swap    swap    defaults    0   0
+# 
+# /etc/sysctl.conf
+
+# Steam audio output switch issue with PulseAudio (remove DONT_MOVE flag for PulseAudio Steam sinks)
+# see http://steamcommunity.com/app/93200/discussions/0/864959809826195633/?l=french
+# echo "[pulse]\nallow-moves=yes" > ~/.alsoftrc 
