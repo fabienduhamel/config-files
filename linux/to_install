@@ -8,3 +8,4 @@
 .config/sublime-text-3/Packages/User/Package\ Control.sublime-settings
 .config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings
 .gitignore_global
+.oh-my-zsh/custom/aliases.zsh
