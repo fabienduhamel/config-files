@@ -38,7 +38,7 @@
       type = Terminal
       order = 0
       parent = child1
-      command = top
+      command = htop || top
     [[[terminal5]]]
       profile = default
       type = Terminal
