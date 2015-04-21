@@ -16,6 +16,11 @@ cd
 # default shell
 chsh -s /bin/zsh
 
+# composer.phar
+su -
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
 # php-pear
 sudo apt-get install php-pear
 
