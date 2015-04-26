@@ -3,7 +3,7 @@
 # this scripts runs the very essential commands for a new linux installation
 
 # main packages
-sudo apt-get install terminator zsh vim dconf-tools htop
+sudo apt-get install terminator zsh vim git dconf-tools htop
 
 # oh my zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
@@ -15,6 +15,12 @@ cd
 
 # default shell
 chsh -s /bin/zsh
+
+# bower
+sudo apt-get install npm nodejs
+sudo npm install -g bower
+# if bower doesnt find node:
+sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 # composer.phar
 su -
