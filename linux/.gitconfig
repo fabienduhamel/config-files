@@ -20,9 +20,9 @@
     pushu = push -u origin HEAD
 
 [core]
-    editor     = vim
-    whitespace = -trailing-space
-    excludesfile = /home/fab/.gitignore_global
+    editor       = vim
+    whitespace   = -trailing-space
+    excludesfile = ~/.gitignore_global
 
 [diff]
     mnemonicPrefix = true
