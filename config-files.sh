@@ -42,6 +42,7 @@ function path_without_home_path {
 function create_environment {
     mkdir $ENVIRONMENT
     touch $ENVIRONMENT/$INSTALL_LIST_FILE
+    echo "$ENVIRONMENT created."
 }
 
 function add {
@@ -91,6 +92,11 @@ function remove {
 function install_environment {
     echo "Install $ENVIRONMENT"
 
+    if [ ! -f $INSTALL_LIST_FILE ]; then
+        echo "$ENVIRONMENT is not an environment. Exiting."
+        exit 1
+    fi
+
     cat $INSTALL_LIST_FILE | while read -r element; do
         install "$element"
     done
@@ -123,6 +129,12 @@ function backup {
 
 function install {
     element=$1
+    if [ -z "$element" ]; then
+        echo "Empty element to install for environment $ENVIRONMENT"
+        echo "Please remove empty lines in $ENVIRONMENT/$INSTALL_LIST_FILE. Exiting."
+        exit 1
+    fi
+
     existing_link_cmd="test -L $HOME/$element"
     if eval $existing_link_cmd; then
         echo "$HOME/$element is already a link. Skipping"
