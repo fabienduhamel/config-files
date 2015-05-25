@@ -52,6 +52,10 @@ plugins=(git safe-paste symfony2 composer bower)
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+if [ -d ~/bin ]; then
+    export PATH=$PATH:~/bin
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
