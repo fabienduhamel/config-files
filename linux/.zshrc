@@ -104,3 +104,4 @@ ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[magenta]%}%{✖%G%}"
 ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}%{✚%G%}"
 # Set zsh-git-prompt and time in $PROMPT
 PROMPT='${ret_status}%{$fg_bold[green]%}[%*] %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_super_status)%{$fg_bold[blue]%} %{$reset_color%}'
+

@@ -16,3 +16,14 @@ function vfind
         echo -e $FILES
     fi
 }
+
+function ffind
+{
+    find $1 -type f -iname \*$2\* 2>/dev/null | grep --color -i $2
+}
+
+function dfind
+{
+    find $1 -type d -iname \*$2\* 2>/dev/null | grep --color -i $2
+}
+
