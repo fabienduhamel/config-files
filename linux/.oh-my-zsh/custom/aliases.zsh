@@ -8,12 +8,12 @@ alias dvorak='setxkbmap dvorak'
 # Find and vim if one result found.
 function vfind
 {
-    FILE_COUNT=`find "$@" | wc -l`
-    FILES=`find "$@"`
-    if [ $FILE_COUNT -eq 1 ]; then
+    FILES=$(find $1 -type f -name "$2")
+    FILE_COUNT=`echo $FILES | wc -l`
+    if [ $FILE_COUNT -eq 1 ] && [ ! -z $FILES ]; then
         vim $FILES
     else
-        echo -e $FILES
+        echo $FILES
     fi
 }
 
