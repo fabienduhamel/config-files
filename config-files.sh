@@ -39,6 +39,17 @@ function path_without_home_path {
     echo $substring
 }
 
+function directory_of_file {
+    substring_length=${#1}
+    substring=${1%/*}
+    directory_subtring_length=${#substring}
+    if [ "$substring_length" == "$directory_subtring_length" ]; then
+        echo "."
+    else
+        echo $substring
+    fi
+}
+
 function create_environment {
     mkdir $ENVIRONMENT
     touch $ENVIRONMENT/$INSTALL_LIST_FILE
@@ -160,6 +171,13 @@ function link {
     target="$PWD/$element"
     link_name="$element"
     link_name_without_trailing_slash=${link_name%/}
+    element_to_remove=$(path_without_home_path "$link_name_without_trailing_slash")
+    directory=$(directory_of_file "$link_name_without_trailing_slash")
+    global_directory=$HOME/$directory
+    if [ ! -d $global_directory ]; then
+        echo "Directory does not exist, creating $global_directory"
+        mkdir -p $global_directory
+    fi
     link_cmd="ln -s $target $HOME/$link_name_without_trailing_slash"
     echo "Creating link for $element"
     echo $link_cmd
