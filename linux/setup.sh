@@ -3,7 +3,7 @@
 # this scripts runs the very essential commands for a new linux installation
 
 # main packages
-sudo apt-get install terminator zsh vim git dconf-tools htop
+sudo apt-get install terminator zsh vim git dconf-tools htop curl php5-cli php5-curl
 
 # oh my zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
@@ -15,6 +15,10 @@ cd
 
 # default shell
 chsh -s /bin/zsh
+
+# Monaco font
+# https://github.com/cstrap/monaco-font
+curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
 
 # bower
 sudo apt-get install npm nodejs
