@@ -3,7 +3,7 @@
 # this scripts runs the very essential commands for a new linux installation
 
 # main packages
-sudo apt-get install terminator zsh vim git dconf-tools htop curl php5-cli php5-curl
+sudo apt-get install terminator zsh vim git dconf-tools htop iotop curl php5-cli php5-curl
 
 # oh my zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
