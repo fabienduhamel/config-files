@@ -3,7 +3,7 @@
 # this scripts runs the very essential commands for a new linux installation
 
 # main packages
-sudo apt-get install terminator zsh vim git dconf-tools htop iotop curl php5-cli php5-curl
+sudo apt install terminator zsh vim git dconf-tools htop iotop curl php5-cli php5-curl
 
 # oh my zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
@@ -15,6 +15,10 @@ cd
 
 # default shell
 chsh -s /bin/zsh
+
+# git up (https://github.com/aanand/git-up)
+sudo apt install ruby
+sudo gem install git-up
 
 # Monaco font
 # https://github.com/cstrap/monaco-font
