@@ -5,6 +5,9 @@ alias azerty='setxkbmap fr'
 alias bepo='setxkbmap fr bepo'
 alias dvorak='setxkbmap dvorak'
 
+alias grr='git reset --hard `git rev-parse --abbrev-ref --symbolic-full-name @{u}`'
+alias gu='git up'
+
 # Find and vim if one result found.
 function vfind
 {
