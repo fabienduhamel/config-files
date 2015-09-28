@@ -5,7 +5,7 @@ alias azerty='setxkbmap fr'
 alias bepo='setxkbmap fr bepo'
 alias dvorak='setxkbmap dvorak'
 
-alias grr='git reset --hard `git rev-parse --abbrev-ref --symbolic-full-name @{u}`'
+# alias grr='git reset --hard `git rev-parse --abbrev-ref --symbolic-full-name @{u}`'
 alias gu='git up'
 
 # Find and vim if one result found.
@@ -28,5 +28,16 @@ function ffind
 function dfind
 {
     find $1 -type d -iname \*$2\* 2>/dev/null | grep --color -i $2
+}
+
+function grr
+{
+    BRANCH=`git rev-parse --abbrev-ref --symbolic-full-name @{u}`
+    QUESTION='git reset --hard '$BRANCH;
+    read -q "REPLY?$QUESTION?"
+    if [ $REPLY = 'y' ]; then
+        echo ""
+        git reset --hard $BRANCH
+    fi
 }
 
