@@ -7,6 +7,7 @@ alias dvorak='setxkbmap dvorak'
 
 # alias grr='git reset --hard `git rev-parse --abbrev-ref --symbolic-full-name @{u}`'
 alias gu='git up'
+alias gda='git diff --cached'
 
 # Find and vim if one result found.
 function vfind
