@@ -12,7 +12,8 @@
     lg    = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
     oops  = commit --amend --no-edit
     br    = branch
-    lbr   = branch -lvv
+    lbr   = branch -lvv 
+    blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:white)%(HEAD) %(refname:short)|%(color:yellow)[%(upstream:short)]|%(color:red)%(objectname:short)|%(color:blue)%(subject)|%(color:green)%(committerdate:relative)|%(color:magenta)<%(authorname)>%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r"
     rbr   = branch -r
     wdiff = diff --word-diff
     cdiff = diff --cached
