@@ -9,16 +9,25 @@
     st    = status
     ci    = commit
     co    = checkout
-    lg    = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+    lg    = log --graph --pretty=tformat:'%Cred%h%C(auto)%d%C(reset) %s %C(magenta)<%an> %C(yellow)%ar%Creset'
     oops  = commit --amend --no-edit
     br    = branch
     lbr   = branch -lvv 
-    blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:white)%(HEAD) %(refname:short)|%(color:yellow)[%(upstream:short)]|%(color:red)%(objectname:short)|%(color:blue)%(subject)|%(color:green)%(committerdate:relative)|%(color:magenta)<%(authorname)>%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r"
-    rbr   = branch -r
-    wdiff = diff --word-diff
-    cdiff = diff --cached
-    ndiff = diff --name-only
-    pushu = push -u origin HEAD
+    blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:white)%(HEAD) %(refname:short)|%(color:bold yellow)[%(upstream:short)]|%(color:reset)%(color:red)%(objectname:short)|%(color:bold blue)%(subject)|%(color:reset)%(color:yellow)%(committerdate:relative)|%(color:magenta)<%(authorname)>%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r"
+    ll    = log --pretty=format:'%C(red)%h%C(auto)%d %Creset%C(bold blue)%s %Creset%C(yellow)%cr %C(magenta)<%cn>' --decorate --stat
+    rbr          = branch -r
+    wdiff        = diff --word-diff
+    cdiff        = diff --cached
+    ndiff        = diff --name-only
+    pushu        = push -u origin HEAD
+    assume       = update-index --assume-unchanged
+    unassume     = update-index --no-assume-unchanged
+    assumed      = "!git ls-files -v | grep ^h | cut -c 3-"
+#    unassumeall  = "!git assumed | xargs git update-index --no-assume-unchanged"
+#    assumeall    = "!git st -s | awk {'print $2'} | xargs git assume"
+    filelog      = log -u
+    fl           = log -u
+    la           = "!git config -l | grep alias | cut -c 7-"
 
 [core]
     editor       = vim
