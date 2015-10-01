@@ -9,6 +9,8 @@ alias dvorak='setxkbmap dvorak'
 alias gu='git up'
 alias gda='git diff --cached'
 alias gb='git blist'
+alias gbm='git branch --merged'
+alias gbnm='git branch --no-merged'
 
 # Find and vim if one result found.
 function vfind
