@@ -13,7 +13,7 @@
     oops  = commit --amend --no-edit
     br    = branch
     lbr   = branch -lvv 
-    blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:white)%(HEAD) %(refname:short)|%(color:bold yellow)[%(upstream:short)]|%(color:reset)%(color:red)%(objectname:short)|%(color:bold blue)%(subject)|%(color:reset)%(color:yellow)%(committerdate:relative)|%(color:magenta)<%(authorname)>%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r"
+    blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:white)%(HEAD) %(refname:short)|%(color:bold yellow)[%(upstream:short)]|%(color:reset)%(color:red)%(objectname:short) %(color:bold blue)%(subject) %(color:reset)%(color:yellow)%(committerdate:relative) %(color:magenta)<%(authorname)>%(color:reset)' | column -ts'|'; }; r"
     ll    = log --pretty=format:'%C(red)%h%C(auto)%d %Creset%C(bold blue)%s %Creset%C(yellow)%cr %C(magenta)<%cn>' --decorate --stat
     rbr          = branch -r
     wdiff        = diff --word-diff
