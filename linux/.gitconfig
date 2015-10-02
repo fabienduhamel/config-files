@@ -13,7 +13,7 @@
     br    = branch
     lbr   = branch -lvv 
     lg    = log --graph --pretty=tformat:'%Cred%h%C(auto)%d%C(reset) %s %C(magenta)<%an> %C(yellow)%ar%Creset'
-    ll    = log --pretty=format:'%C(red)%h%C(auto)%d %Creset%C(bold blue)%s %Creset%C(yellow)%cr %C(magenta)<%cn>' --decorate --stat
+    ll    = log --pretty=format:'%C(red)%h%C(auto)%d %Creset%C(bold blue)%s %Creset%C(yellow)%cr %C(magenta)<%an>' --decorate --stat
     blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:bold green)%(HEAD) %(color:reset)%(refname:short)|%(color:bold yellow)[%(upstream:short)]|%(color:reset)%(color:red)%(objectname:short) %(color:bold blue)%(subject) %(color:reset)%(color:yellow)%(committerdate:relative) %(color:magenta)<%(authorname)>%(color:reset)' | column -ts'|'; }; r"
     rbr          = branch -r
     brd          = branch -d
