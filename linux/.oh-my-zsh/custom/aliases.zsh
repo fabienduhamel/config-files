@@ -39,7 +39,7 @@ function grr
 {
     BRANCH=`git rev-parse --abbrev-ref --symbolic-full-name @{u}`
     QUESTION='git reset --hard '$BRANCH;
-    read -q "REPLY?$QUESTION?"
+    read -q "REPLY?$QUESTION? (y/n) "
     if [ $REPLY = 'y' ]; then
         echo ""
         git reset --hard $BRANCH
