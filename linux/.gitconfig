@@ -14,7 +14,7 @@
     lbr   = branch -lvv 
     lg    = log --graph --pretty=tformat:'%Cred%h%C(auto)%d%C(reset) %s %C(yellow)<%an, %ar>%Creset'
     ll    = log --pretty=format:'%C(red)%h%C(auto)%d %Creset%C(bold blue)%s %Creset%C(yellow)<%an, %ar>' --decorate --stat
-    blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:bold green)%(HEAD) %(color:reset)%(refname:short)|%(color:bold yellow)[%(upstream:short)]|%(color:reset)%(color:red)%(objectname:short) %(color:bold blue)%(subject) %(color:reset)%(color:yellow)<%(authorname), %(authordate:relative)>%(color:reset)' | column -ts'|'; }; r"
+    blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:bold green)%(HEAD) %(color:bold white)%(refname:short)|%(color:bold yellow)[%(upstream:short)]|%(color:reset)%(color:red)%(objectname:short) %(color:bold blue)%(subject) %(color:reset)%(color:yellow)<%(authorname), %(authordate:relative)>%(color:reset)' | column -ts'|'; }; r"
     rbr          = branch -r
     brd          = branch -d
     wdiff        = diff --word-diff
