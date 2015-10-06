@@ -96,7 +96,7 @@ bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
 # Better zsh git prompt with zsh-git-prompt 
-source $ZSH/plugins/zsh-git-prompt/zshrc.sh
+source $ZSH/custom/plugins/zsh-git-prompt/zshrc.sh
 # Overriding colors
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{●%G%}"
