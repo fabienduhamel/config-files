@@ -9,7 +9,7 @@ sudo apt install terminator zsh vim git dconf-tools htop iotop curl php5-cli php
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
 # zsh-git-prompt - See .zshrc for informations
-cd $ZSH/plugins
+cd $ZSH/custom/plugins
 git clone https://github.com/olivierverdier/zsh-git-prompt
 cd
 
