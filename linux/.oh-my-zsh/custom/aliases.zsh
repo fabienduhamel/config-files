@@ -1,6 +1,7 @@
 alias lal='ls -lAh'
 alias dua='du -sh `ls -A | grep . | cut -d "'" "'" -f6-`'
 
+alias starship='play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +30 fade h 1 86400 1'
 alias azerty='setxkbmap fr'
 alias bepo='setxkbmap fr bepo'
 alias dvorak='setxkbmap dvorak'
