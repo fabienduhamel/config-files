@@ -8,6 +8,7 @@ alias dvorak='setxkbmap dvorak'
 
 # alias grr='git reset --hard `git rev-parse --abbrev-ref --symbolic-full-name @{u}`'
 alias gu='git up'
+alias gf='git fetch --tags'
 alias gda='git diff --cached'
 alias gb='git blist'
 alias gbm='git branch --merged'
