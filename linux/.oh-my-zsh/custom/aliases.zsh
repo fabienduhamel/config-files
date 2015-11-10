@@ -14,6 +14,7 @@ alias gb='git blist'
 alias gbm='git branch --merged'
 alias gbnm='git branch --no-merged'
 alias gcob='git checkout -b'
+alias gcot='git checkout -t'
 
 # Find and vim if one result found.
 function vfind
