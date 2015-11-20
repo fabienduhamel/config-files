@@ -15,6 +15,7 @@ alias gbm='git branch --merged'
 alias gbnm='git branch --no-merged'
 alias gcob='git checkout -b'
 alias gcot='git checkout -t'
+alias gbpurge='git branch --merged | grep -vE "(master|\*)" | xargs git branch -d'
 
 # Find and vim if one result found.
 function vfind
