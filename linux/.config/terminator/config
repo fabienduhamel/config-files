@@ -5,7 +5,7 @@
 [profiles]
   [[default]]
     scrollback_lines = 5000
-    font = Monospace 9
+    font = Monospace 8
     use_system_font = False
     background_image = None
 [layouts]
