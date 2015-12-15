@@ -10,7 +10,7 @@
     background_image = None
     use_system_font = False
     scrollback_lines = 5000
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#8b9833:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
+    palette = "#526a70:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#246879:#cb4b16:#8b9833:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
     foreground_color = "#c8c8c8"
     font = Monospace 8
     background_color = "#2b2b2b"
