@@ -20,6 +20,9 @@ chsh -s /bin/zsh
 sudo apt install ruby ruby-gem make gcc
 sudo gem install git-up
 
+# diff-so-fancy (https://github.com/stevemao/diff-so-fancy)
+sudo npm install -g diff-so-fancy
+
 # Monaco font
 # https://github.com/cstrap/monaco-font
 curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash

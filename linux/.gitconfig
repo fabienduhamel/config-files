@@ -36,6 +36,7 @@
     editor       = vim
     whitespace   = -trailing-space
     excludesfile = ~/.gitignore_global
+    pager = diff-so-fancy | less --tabs=1,5 -R
 
 [diff]
     mnemonicPrefix = true
