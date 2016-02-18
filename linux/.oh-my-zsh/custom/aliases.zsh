@@ -5,6 +5,7 @@ alias starship='play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +
 alias azerty='setxkbmap fr'
 alias bepo='setxkbmap fr bepo'
 alias dvorak='setxkbmap dvorak'
+alias meteo='curl -4 wttr.in/Lille'
 
 # alias grr='git reset --hard `git rev-parse --abbrev-ref --symbolic-full-name @{u}`'
 alias gu='git up'
