@@ -52,6 +52,10 @@ sudo pear install --alldeps 'phpmd/PHP_PMD'
 # developing font
 sudo apt-get install fonts-inconsolata
 
+# vim bundles
+# @see https://github.com/VundleVim/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # # Symfony2 coding standards
 cd /usr/share/php/PHP/CodeSniffer/Standards
 sudo git clone https://github.com/escapestudios/Symfony2-coding-standard.git Symfony2
