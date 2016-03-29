@@ -56,7 +56,11 @@ sudo apt-get install fonts-inconsolata
 # @see https://github.com/VundleVim/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# # Symfony2 coding standards
+# Atom settings
+# http://atom.io/packages/sync-settings
+# Managed by a personal gist :)
+
+# Symfony2 coding standards
 cd /usr/share/php/PHP/CodeSniffer/Standards
 sudo git clone https://github.com/escapestudios/Symfony2-coding-standard.git Symfony2
 
