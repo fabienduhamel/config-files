@@ -20,6 +20,11 @@ chsh -s /bin/zsh
 sudo apt install ruby ruby-gem make gcc
 sudo gem install git-up
 
+# git-standup (https://github.com/kamranahmedse/git-standup)
+git clone https://github.com/kamranahmedse/git-standup.git
+cd git-standup
+sudo make install
+
 # diff-so-fancy (https://github.com/stevemao/diff-so-fancy)
 sudo npm install -g diff-so-fancy
 
