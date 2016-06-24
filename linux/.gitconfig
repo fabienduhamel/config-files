@@ -11,14 +11,14 @@
     co    = checkout
     oops  = commit --amend --no-edit
     br    = branch
-    lbr   = branch -lvv 
+    lbr   = branch -lvv
     lg    = log --graph --pretty=tformat:'%Cred%h%C(auto)%d%C(reset) %s %C(yellow)<%an, %ar>%Creset'
     ll    = log --pretty=format:'%C(red)%h%C(auto)%d %Creset%C(bold blue)%s %Creset%C(yellow)<%an, %ar>' --decorate --stat
     blist = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:bold green)%(HEAD) %(color:bold white)%(refname:short)|%(color:bold yellow)[%(upstream:short)]|%(color:reset)%(color:red)%(objectname:short) %(color:bold blue)%(subject) %(color:reset)%(color:yellow)<%(authorname), %(authordate:relative)>%(color:reset)' | column -ts'|'; }; r"
     rbr          = branch -r
     brd          = branch -d
-    brpurge      = "!git branch -vv | grep -E \": disparue|: gone\" | sed 's/^.\\{2\\}//g' | cut -d' ' -f1 | xargs -n 1 git branch -d"
-    brpurgef     = "!git branch -vv | grep -E \": disparue|: gone\" | sed 's/^.\\{2\\}//g' | cut -d' ' -f1 | xargs -n 1 git branch -D"
+    brpurge      = "!git fetch --prune && git branch -vv | grep -E \": disparue|: gone\" | sed 's/^.\\{2\\}//g' | cut -d' ' -f1 | xargs -n 1 git branch -d"
+    brpurgef     = "!git fetch --prune && git branch -vv | grep -E \": disparue|: gone\" | sed 's/^.\\{2\\}//g' | cut -d' ' -f1 | xargs -n 1 git branch -D"
     wdiff        = diff --word-diff
     cdiff        = diff --cached
     ndiff        = diff --name-only
