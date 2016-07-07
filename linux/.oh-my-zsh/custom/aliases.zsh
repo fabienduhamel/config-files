@@ -7,7 +7,8 @@ alias bepo='setxkbmap fr bepo'
 alias dvorak='setxkbmap dvorak'
 alias meteo='curl -4 wttr.in/Lille'
 
-# alias grr='git reset --hard `git rev-parse --abbrev-ref --symbolic-full-name @{u}`'
+alias gnd='git diff --name-only'
+compdef _git gnd=git-checkout
 alias gu='git up'
 alias gf='git fetch --tags'
 alias gda='git diff --cached'
