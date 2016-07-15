@@ -1,62 +1,62 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_transmit_bg_color = "#9a5b00"
-  title_inactive_fg_color = "#ffffff"
   suppress_multiple_term_dialog = True
   title_inactive_bg_color = "#2f3132"
+  title_inactive_fg_color = "#ffffff"
+  title_transmit_bg_color = "#9a5b00"
 [keybindings]
-[profiles]
-  [[default]]
-    background_image = None
-    use_system_font = False
-    scrollback_lines = 5000
-    palette = "#526a70:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#246879:#cb4b16:#8b9833:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
-    foreground_color = "#c8c8c8"
-    font = Monospace 8
-    background_color = "#2b2b2b"
 [layouts]
   [[default]]
     [[[child1]]]
+      parent = window0
       profile = default
       type = Terminal
-      parent = window0
     [[[window0]]]
-      type = Window
       parent = ""
       size = 1250, 730
+      type = Window
   [[monitoring]]
     [[[child0]]]
-      position = 184:104
-      type = Window
       order = 0
       parent = ""
+      position = 184:104
       size = 1482, 835
+      type = Window
     [[[child1]]]
-      position = 418
-      type = VPaned
       order = 0
       parent = child0
+      position = 418
+      type = VPaned
     [[[child3]]]
+      order = 1
+      parent = child1
       position = 741
       type = HPaned
-      order = 1
-      parent = child1
     [[[terminal2]]]
-      profile = default
-      type = Terminal
+      command = htop || top
       order = 0
       parent = child1
-      command = htop || top
-    [[[terminal5]]]
       profile = default
       type = Terminal
-      order = 1
-      parent = child3
-      command = watch sensors
     [[[terminal4]]]
-      profile = default
-      type = Terminal
+      command = watch free -m
       order = 0
       parent = child3
-      command = watch free -m
+      profile = default
+      type = Terminal
+    [[[terminal5]]]
+      command = watch sensors
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#2b2b2b"
+    background_image = None
+    font = Monospace 8
+    foreground_color = "#c8c8c8"
+    palette = "#526a70:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#246879:#cb4b16:#8b9833:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
+    scrollback_lines = 5000
+    use_system_font = False
