@@ -2,7 +2,7 @@
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Monaco",
+	"font_face": "inconsolata",
 	"font_size": 10,
 	"ignored_packages":
 	[
