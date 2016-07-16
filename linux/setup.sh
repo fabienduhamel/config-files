@@ -3,7 +3,7 @@
 # this scripts runs the very essential commands for a new linux installation
 
 # main packages
-sudo apt install terminator zsh vim git dconf-tools htop iotop curl php5-cli php5-curl
+sudo apt install terminator zsh vim git dconf-tools htop iotop curl php npm
 
 # oh my zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
@@ -24,11 +24,7 @@ sudo make install
 # diff-so-fancy (https://github.com/stevemao/diff-so-fancy)
 sudo npm install -g diff-so-fancy
 
-# Monaco font
-# https://github.com/cstrap/monaco-font
-curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
-
-# bower
+# bower (obsolete)
 sudo apt-get install npm nodejs
 sudo npm install -g bower
 # if bower doesnt find node:
@@ -68,8 +64,14 @@ sudo git clone https://github.com/escapestudios/Symfony2-coding-standard.git Sym
 # Swapfile
 dd if=/dev/zero of=/swapfile bs=1M count=8192
 mkswap /swapfile
+chmod 600 /swapfile
 swapon /swapfile
 # /etc/fstab
 /swapfile     swap    swap    defaults    0   0
 # /etc/sysctl.conf
 echo "vm.swappiness = 10" >> /etc/sysctl.conf
+
+# Change mdm keyboard layout
+Into file "/etc/mdm/Init/Default":
+Insert "/usr/bin/setxkbmap fr" before "exit 0"
+
