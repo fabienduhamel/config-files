@@ -9,7 +9,7 @@ DISK_ID="ata-WDC_WD7500BPVT-60HXZT3_WD-WXB1C22S4013"
 DISK_PATH="/dev/disk/by-id/$DISK_ID"
 
 # Not our USB plugged
-if [ ! -e $DISK_PATH ]; then
+if [[ "$DISK_ID" != "$1" ]]; then
     exit
 fi
 
