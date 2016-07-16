@@ -5,7 +5,7 @@ cd /home/fab
 export DISPLAY=:0
 
 MOUNT_POINT="/media/truecrypt"
-DISK_ID="usb-WDC_WD75_00BPVT-60HXZT3_0123456789ABCDEF-0:0"
+DISK_ID="ata-WDC_WD7500BPVT-60HXZT3_WD-WXB1C22S4013"
 DISK_PATH="/dev/disk/by-id/$DISK_ID"
 
 # Not our USB plugged
