@@ -18,8 +18,12 @@ if [ -d $MOUNT_POINT ]; then
     exit
 fi
 
-terminator -e "truecrypt --mount $DISK_PATH $MOUNT_POINT \
+terminator -e "truecrypt --display-password --mount $DISK_PATH $MOUNT_POINT \
+    && notify-send 'Backup' 'Le disque de backup a été monté.' \
     && cd $MOUNT_POINT \
-    && ./do_backups.sh ; \
-    cd ~ && truecrypt -d && echo 'Disk has been unmounted correctly.' || echo 'Disk has not been unmounted.' ; \
+    && echo 'Preview files that will be deleted:' && ./do_backups.sh | grep deleting | grep -v Secure ; \
     exec $SHELL"
+
+cd ~ && truecrypt -d \
+    && notify-send "Backup" "Le disque externe a été démonté." \
+    || notify-send "Backup" "Le disque externe n'a pas pu être démonté correctement."
