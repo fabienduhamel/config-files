@@ -9,7 +9,7 @@ alias meteo='curl -4 wttr.in/Lille'
 
 alias gnd='git diff --name-only'
 compdef _git gnd=git-checkout
-alias gu='git up'
+alias gu='git fetch --prune && git up'
 alias gf='git fetch --tags'
 alias gda='git diff --cached'
 alias gb='git blist'
