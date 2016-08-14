@@ -11,10 +11,16 @@ function hdmi
     dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac 0
 
     pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
-    INPUTS=($(pactl list sink-inputs | grep Input | awk '{print $3}' | sed -r 's/^.{1}//'))
     pactl set-card-profile 0 output:hdmi-stereo-extra1
-    pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
-    for i in ${INPUTS[*]}; do pactl move-sink-input $i alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1; done
+
+    LOOP_COUNT=0
+    MAX_LOOP_COUNT=120
+    while [ $LOOP_COUNT -lt $MAX_LOOP_COUNT ]; do
+        INPUTS=($(pactl list sink-inputs | grep Input | awk '{print $3}' | sed -r 's/^.{1}//'))
+        for i in ${INPUTS[*]}; do pactl move-sink-input $i alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1; done
+        LOOP_COUNT=$(($LOOP_COUNT + 1))
+        sleep 1
+    done
 }
 
 # Switches video and audio to a dual monitor screen, and restore monitor sleep display.
@@ -27,8 +33,14 @@ function normal
     dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac 600
 
     pactl set-default-sink alsa_output.pci-0000_00_1b.0.analog-stereo
-    INPUTS=($(pactl list sink-inputs | grep Input | awk '{print $3}' | sed -r 's/^.{1}//'))
     pactl set-card-profile 0 output:analog-stereo
-    pactl set-default-sink alsa_output.pci-0000_00_1b.0.analog-stereo
-    for i in ${INPUTS[*]}; do pactl move-sink-input $i alsa_output.pci-0000_00_1b.0.analog-stereo; done
+
+    LOOP_COUNT=0
+    MAX_LOOP_COUNT=120
+    while [ $LOOP_COUNT -lt $MAX_LOOP_COUNT ]; do
+        INPUTS=($(pactl list sink-inputs | grep Input | awk '{print $3}' | sed -r 's/^.{1}//'))
+        for i in ${INPUTS[*]}; do pactl move-sink-input $i alsa_output.pci-0000_00_1b.0.analog-stereo; done
+        LOOP_COUNT=$(($LOOP_COUNT + 1))
+        sleep 1
+    done
 }
