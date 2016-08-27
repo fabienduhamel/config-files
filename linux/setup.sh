@@ -16,6 +16,9 @@ cd
 # default shell
 chsh -s /bin/zsh
 
+# write '`' in a single tap
+xmodmap -e 'keycode 16 = egrave 7 egrave 7 grave Egrave grave'
+
 # git-standup (https://github.com/kamranahmedse/git-standup)
 git clone https://github.com/kamranahmedse/git-standup.git
 cd git-standup
