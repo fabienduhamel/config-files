@@ -3,7 +3,9 @@
 # this scripts runs the very essential commands for a new linux installation
 
 # main packages
-sudo apt install terminator zsh vim git dconf-tools htop iotop curl php npm
+sudo apt install terminator zsh vim git dconf-tools htop iotop curl php npm nodejs
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 # oh my zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
@@ -17,64 +19,59 @@ cd
 chsh -s /bin/zsh
 
 # write '`' in a single tap
-xmodmap -e 'keycode 16 = egrave 7 egrave 7 grave Egrave grave'
-
-# git-standup (https://github.com/kamranahmedse/git-standup)
-git clone https://github.com/kamranahmedse/git-standup.git
-cd git-standup
-sudo make install
+echo "keycode 16 = egrave 7 egrave 7 grave Egrave grave" >> ~/.xmodmap.conf
 
 # diff-so-fancy (https://github.com/stevemao/diff-so-fancy)
 sudo npm install -g diff-so-fancy
 
-# bower (obsolete)
-sudo apt-get install npm nodejs
-sudo npm install -g bower
-# if bower doesnt find node:
-sudo ln -s /usr/bin/nodejs /usr/bin/node
-
 # composer.phar
-su -
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-
-# php-pear
-sudo apt-get install php-pear
-
-# phpcs
-sudo pear install PHP_CodeSniffer
-
-# phpmd
-sudo pear channel-discover 'pear.phpmd.org'
-sudo pear channel-discover 'pear.pdepend.org'
-sudo pear install --alldeps 'phpmd/PHP_PMD'
+su -c "curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer"
 
 # developing font
 sudo apt-get install fonts-inconsolata
-
-# vim bundles
-# @see https://github.com/VundleVim/Vundle.vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Atom settings
 # http://atom.io/packages/sync-settings
 # Managed by a personal gist :)
 
-# Symfony2 coding standards
-cd /usr/share/php/PHP/CodeSniffer/Standards
-sudo git clone https://github.com/escapestudios/Symfony2-coding-standard.git Symfony2
-
 # Swapfile
-dd if=/dev/zero of=/swapfile bs=1M count=8192
-mkswap /swapfile
-chmod 600 /swapfile
-swapon /swapfile
-# /etc/fstab
-/swapfile     swap    swap    defaults    0   0
-# /etc/sysctl.conf
-echo "vm.swappiness = 10" >> /etc/sysctl.conf
+sudo dd if=/dev/zero of=/swapfile bs=1M count=8192
+sudo mkswap /swapfile
+sudo chmod 600 /swapfile
+sudo swapon /swapfile
+su -c "echo '/swapfile     swap    swap    defaults    0   0' >> /etc/fstab"
+su -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"
 
 # Change mdm keyboard layout
-Into file "/etc/mdm/Init/Default":
-Insert "/usr/bin/setxkbmap fr" before "exit 0"
+# Insert "/usr/bin/setxkbmap fr" before "exit 0" in /etc/mdm/Init/Default
+su -c "sed -i 's#exit 0#/usr/bin/setxkbmap fr\nexit 0#g' /etc/mdm/Init/Default"
 
+# OPTIONAL
+
+# # vim bundles
+# # @see https://github.com/VundleVim/Vundle.vim
+# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# # git-standup (https://github.com/kamranahmedse/git-standup)
+# git clone https://github.com/kamranahmedse/git-standup.git
+# cd git-standup
+# sudo make install
+
+# # bower (obsolete)
+# sudo apt-get install nodejs
+# sudo npm install -g bower
+
+# # php-pear
+# sudo apt-get install php-pear
+
+# # phpcs
+# sudo pear install PHP_CodeSniffer
+
+# # phpmd
+# sudo pear channel-discover 'pear.phpmd.org'
+# sudo pear channel-discover 'pear.pdepend.org'
+# sudo pear install --alldeps 'phpmd/PHP_PMD'
+
+# # Symfony2 coding standards
+# cd /usr/share/php/PHP/CodeSniffer/Standards
+# sudo git clone https://github.com/escapestudios/Symfony2-coding-standard.git Symfony2

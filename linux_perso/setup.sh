@@ -8,12 +8,13 @@ echo "[pulse]\nallow-moves=yes" > ~/.alsoftrc
 git clone https://github.com/3v1n0/Solaar.git
 cd Solaar/rules.d
 ./install.sh
+cd
 
-# Numix circle icosn theme
+# Numix circle icon theme
 sudo apt-add-repository ppa:numix/ppa
 sudo apt-get update
 sudo apt-get install numix-icon-theme numix-icon-theme-circle
 
-# Some useful apps
+# Truecrypt
 sudo add-apt-repository ppa:stefansundin/truecrypt && sudo apt-get update && sudo apt-get install truecrypt
 
