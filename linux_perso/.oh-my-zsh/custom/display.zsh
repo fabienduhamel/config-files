@@ -9,6 +9,7 @@ function hdmi
            --output HDMI-0 --mode 1920x1080 --pos 0x0
 
     dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac 0
+    dconf write /org/cinnamon/desktop/session/idle-delay 0
 
     pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
     pactl set-card-profile 0 output:hdmi-stereo-extra1
@@ -31,6 +32,7 @@ function normal
            --output DVI-I-3 --mode 1920x1080 --pos 0x0
 
     dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac 600
+    dconf write /org/cinnamon/desktop/session/idle-delay 600
 
     pactl set-default-sink alsa_output.pci-0000_00_1b.0.analog-stereo
     pactl set-card-profile 0 output:analog-stereo
