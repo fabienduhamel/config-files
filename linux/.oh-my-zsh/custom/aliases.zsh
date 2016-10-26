@@ -19,6 +19,7 @@ alias gcm='git commit -m'
 alias gcob='git checkout -b'
 alias gcot='git checkout -t'
 alias gbpurge='git branch --merged | grep -vE "(master|\*)" | xargs git branch -d'
+alias gmb='git merge-base `git rev-parse --abbrev-ref HEAD`'
 
 # Find and vim if one result found.
 function vfind
