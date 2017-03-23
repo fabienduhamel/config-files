@@ -5,7 +5,11 @@ alias starship='play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +
 alias azerty='setxkbmap fr'
 alias bepo='setxkbmap fr bepo'
 alias dvorak='setxkbmap dvorak'
-alias meteo='curl -4 wttr.in/Lille'
+
+function meteo
+{
+    curl -4 "wttr.in/$1"
+}
 
 alias gnd='git diff --name-only'
 compdef _git gnd=git-checkout
@@ -18,7 +22,7 @@ alias gbnm='git branch --no-merged'
 alias gcm='git commit -m'
 alias gcob='git checkout -b'
 alias gcot='git checkout -t'
-alias gbpurge='git branch --merged | grep -vE "(master|\*)" | xargs git branch -d'
+# alias gbpurge='git branch --merged | grep -vE "(master|\*)" | xargs git branch -d'
 alias gmb='git merge-base `git rev-parse --abbrev-ref HEAD`'
 
 # Find and vim if one result found.

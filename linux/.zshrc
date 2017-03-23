@@ -83,6 +83,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export TERM="xterm-256color"
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -95,7 +97,7 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
-# Better zsh git prompt with zsh-git-prompt 
+# Better zsh git prompt with zsh-git-prompt
 source $ZSH/custom/plugins/zsh-git-prompt/zshrc.sh
 # Overriding colors
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[red]%}"
