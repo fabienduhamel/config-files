@@ -11,7 +11,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
 # zsh-git-prompt - See .zshrc for informations
-git clone https://github.com/olivierverdier/zsh-git-prompt $ZSH_CUSTOM/plugins
+git clone https://github.com/olivierverdier/zsh-git-prompt $ZSH_CUSTOM/plugins/zsh-git-prompt
 
 # default shell
 chsh -s /bin/zsh
