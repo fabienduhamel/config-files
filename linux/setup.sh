@@ -55,10 +55,6 @@ su -c "sed -i 's#exit 0#/usr/bin/setxkbmap fr\nexit 0#g' /etc/mdm/Init/Default"
 # cd git-standup
 # sudo make install
 
-# # bower (obsolete)
-# sudo apt-get install nodejs
-# sudo npm install -g bower
-
 # # php-pear
 # sudo apt-get install php-pear
 
