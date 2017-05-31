@@ -6,6 +6,8 @@ function meteo
     curl -4 "wttr.in/$1"
 }
 
+alias clearswap="su -c 'swapoff -a && swapon -a'"
+
 alias gnd='git diff --name-only'
 compdef _git gnd=git-checkout
 alias gu='git fetch --prune && git up'

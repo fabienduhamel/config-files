@@ -12,7 +12,7 @@
   go_up = None
 [profiles]
   [[default]]
-    palette = "#212121:#d21a17:#24811b:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#333333:#cb4b16:#0f8400:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
+    palette = "#212121:#d21a17:#398e30:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#949494:#cb4b16:#0f8400:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
     background_image = None
     use_system_font = False
     foreground_color = "#efefef"
