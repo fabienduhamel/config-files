@@ -16,4 +16,5 @@
     "save_on_focus_lost": true,
     "show_encoding": true,
     "translate_tabs_to_spaces": true,
+    "highlight_line": true,
 }
