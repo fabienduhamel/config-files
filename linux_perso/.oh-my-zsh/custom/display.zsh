@@ -4,8 +4,8 @@
 # Switches video and audio to a dual screen with TV cloned from monitor, and disable monitor sleep display.
 function hdmi
 {
-    xrandr --output DVI-I-3 --off
-    xrandr --output DVI-I-2 --mode 1920x1080 --pos 0x0 --primary\
+#    xrandr --output DVI-I-3 --off
+    xrandr --output DVI-I-3 --mode 1920x1080 --pos 0x0 --primary\
            --output HDMI-0 --mode 1920x1080 --pos 0x0
 
     dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac 0
@@ -27,9 +27,9 @@ function hdmi
 # Switches video and audio to a dual monitor screen, and restore monitor sleep display.
 function normal
 {
-    xrandr --output HDMI-0 --off
-    xrandr --output DVI-I-2 --mode 1920x1080 --pos 1920x0 --primary\
-           --output DVI-I-3 --mode 1920x1080 --pos 0x0
+#    xrandr --output HDMI-0 --off
+    xrandr --output DVI-I-3 --mode 1920x1080 --pos 1920x0 --primary\
+           --output HDMI-0 --mode 1920x1080 --pos 0x0
 
     dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac 600
     dconf write /org/cinnamon/desktop/session/idle-delay 600

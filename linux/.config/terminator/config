@@ -1,19 +1,16 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_transmit_bg_color = "#9a5b00"
-  title_inactive_fg_color = "#ffffff"
   suppress_multiple_term_dialog = True
   title_inactive_bg_color = "#2f3132"
+  title_inactive_fg_color = "#ffffff"
+  title_transmit_bg_color = "#9a5b00"
 [keybindings]
-[profiles]
-  [[default]]
-    palette = "#526a70:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#246879:#cb4b16:#8b9833:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
-    background_image = None
-    use_system_font = False
-    foreground_color = "#c8c8c8"
-    font = Monospace 8
-    background_color = "#2b2b2b"
-    scrollback_infinite = True
+  broadcast_off = None
+  go_down = None
+  go_left = None
+  go_right = None
+  go_up = None
+  layout_launcher = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -60,3 +57,12 @@
       profile = default
       type = Terminal
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#2b2b2b"
+    background_image = None
+    font = Meslo LG S for Powerline 8
+    foreground_color = "#efefef"
+    palette = "#2b2b2b:#d7211e:#0e6b00:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#333333:#cb4b16:#0f8400:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"
+    scrollback_infinite = True
+    use_system_font = False
