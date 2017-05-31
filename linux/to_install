@@ -1,13 +1,14 @@
 .zshrc
 .inputrc
 .bashrc
-.config/sublime-text-3/Packages/User/Preferences.sublime-settings
-.config/sublime-text-3/Packages/User/bh_core.sublime-settings
 .gitconfig
-.config/terminator/config
+.gitignore_global
+.vimrc
+.oh-my-zsh/custom/aliases.zsh
+.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap
+.config/sublime-text-3/Packages/User/bh_core.sublime-settings
 .config/sublime-text-3/Packages/User/Package\ Control.sublime-settings
 .config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings
-.gitignore_global
-.oh-my-zsh/custom/aliases.zsh
 .config/sublime-text-3/Packages/User/Markdown.sublime-settings
-.vimrc
+.config/terminator/config
