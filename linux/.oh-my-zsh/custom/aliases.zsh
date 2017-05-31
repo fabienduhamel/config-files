@@ -13,6 +13,7 @@ compdef _git gnd=git-checkout
 alias gu='git fetch --prune && git up'
 alias gf='git fetch --tags'
 alias gda='git diff --cached'
+alias gs='git show'
 alias gb='git blist'
 alias gbm='git branch --merged'
 alias gbnm='git branch --no-merged'
