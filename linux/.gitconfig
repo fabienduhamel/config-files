@@ -45,3 +45,6 @@
 
 [push]
     default = simple
+[mergetool]
+    prompt = false
+
