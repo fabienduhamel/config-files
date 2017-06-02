@@ -5,11 +5,14 @@
   suppress_multiple_term_dialog = True
   title_inactive_bg_color = "#2f3132"
 [keybindings]
-  new_tab = <Alt>t
-  move_tab_right = None
   next_tab = <Shift><Alt>Right
-  move_tab_left = None
+  new_window = None
   prev_tab = <Shift><Alt>Left
+  move_tab_right = None
+  close_term = <Primary>w
+  move_tab_left = None
+  split_vert = <Primary><Shift>i
+  new_tab = <Alt>t
 [profiles]
   [[default]]
     palette = "#212121:#d21a17:#398e30:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#949494:#cb4b16:#0f8400:#eebe2c:#65a4ab:#6c71c4:#6cc1ba:#fdf6e3"

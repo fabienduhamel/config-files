@@ -15,9 +15,6 @@ Plugin 'tpope/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'edkolev/tmuxline.vim' "leave this commented out unless changing theme
-Plugin 'benmills/vimux'
-" Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tommcdo/vim-fugitive-blame-ext'
 Plugin 'kana/vim-arpeggio'
 Plugin 'rking/ag.vim'
@@ -27,7 +24,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'slim-template/vim-slim'
-" Plugin 'tmux-plugins/vim-tmux'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'airblade/vim-gitgutter'
@@ -97,18 +93,6 @@ endif
 
 " For regular expressions turn magic on
 set magic
-
-" https://github.com/christoomey/vim-tmux-navigator
-"let g:tmux_navigator_no_mappings = 1
-" These are Alt + hjkl chars (does not work on Linux)
-"nnoremap <silent> Ì :TmuxNavigateLeft<cr>
-"nnoremap <silent> Ï :TmuxNavigateDown<cr>
-"nnoremap <silent> È :TmuxNavigateUp<cr>
-"nnoremap <silent> ¬ :TmuxNavigateRight<cr>
-"nnoremap <silent> œ :TmuxNavigatePrevious<cr>
-" Write all buffers before navigating from Vim to tmux pane (does not work
-" well - eg losing focus for a Cocoa window does not save buffers)
-"let g:tmux_navigator_save_on_switch = 2
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -231,10 +215,6 @@ set wildmode=longest,list,full
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
-" if exists('$TMUX')  " Support resizing in tmux
-"   set ttymouse=xterm2
-" endif
-
 " vv to generate new vertical split
 nnoremap <silent> vv <C-w>v
 " ss to generate new horizontal split
@@ -322,33 +302,6 @@ endif
 set cursorline
 autocmd InsertEnter * highlight  CursorLine ctermbg=236 ctermfg=None
 autocmd InsertLeave * highlight  CursorLine ctermbg=235 ctermfg=None
-
-" Vimux configuration
-" Prompt for a command to run
-"map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
-"map <Leader>vl :VimuxRunLastCommand<CR>
-" Inspect runner pane
-"map <Leader>vi :VimuxInspectRunner<CR>
-" Close vim tmux runner opened by VimuxRunCommand
-"map <Leader>vq :VimuxCloseRunner<CR>
-" Open vimux pane
-"map <Leader>vo :VimuxOpenPane<CR>
-" Interrupt any command running in the runner pane
-"map <Leader>vx :VimuxInterruptRunner<CR>
-"
-" Function to make tmux zoom its runner pane.
-"function! VimuxZoomRunner()
-"  call VimuxInspectRunner()
-"  call system("tmux resize-pane -Z")
-"endfunction
-" Zoom the runner pane (use <bind-key> z to restore runner pane)
-"map <Leader>vz :call VimuxZoomRunner()<CR>
-" Chords
-"call arpeggio#map('n', '', 0, 'vl', ':VimuxRunLastCommand<CR>')
-"call arpeggio#map('n', '', 0, 'vp', ':VimuxPromptCommand<CR>')
-"call arpeggio#map('n', '', 0, 'vq', ':VimuxCloseRunner<CR>')
-"call arpeggio#map('n', '', 0, 'pr', 'VimuxRunCommand("clear; pr<CR>')
 
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<CR>
