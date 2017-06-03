@@ -1,5 +1,9 @@
 # My config files
 
+## News
+
+Dotfiles moved to [dev-setup repo](https://github.com/fabienduhamel/dev-setup).
+
 ## How to use
 
 Read the help by running:
