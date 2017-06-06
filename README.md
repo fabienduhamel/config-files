@@ -3,6 +3,7 @@
 ## News
 
 Dotfiles moved to [dev-setup repo](https://github.com/fabienduhamel/dev-setup).
+Sublime conf moved to [sublime-conf repo](https://github.com/fabienduhamel/sublime-conf)
 
 ## How to use
 
